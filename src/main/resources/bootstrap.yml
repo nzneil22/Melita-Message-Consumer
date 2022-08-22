@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: melita-consumer
+  profiles:
+    active: default
+  config:
+    import: configserver:http://localhost:8888
+    use-legacy-processing: true
+  cloud:
+    bootstrap:
+      enabled: true
+    config:
+      enabled: true
