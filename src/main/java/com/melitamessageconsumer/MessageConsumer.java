@@ -17,7 +17,7 @@ public class MessageConsumer{
 
     @StreamListener(target = AMQPBindings.LISTEN)
     public void onMessage(String msg){
-        System.out.println("Melita Consumes Message - " + msg);
+        System.out.println("AMDOCS Consumes Message - " + msg);
     }
 
 

@@ -1,34 +1,22 @@
 package com.melitamessageconsumer;
 
-public enum Service {
+import lombok.Builder;
+import lombok.Data;
 
-    INTERNET_S("250MBPS Internet"),
-    INTERNET_L("1GBPS Internet"),
-    TV_S("TV 90 Channels"),
-    TV_L("TV 140 Channels"),
-    TELE_S("Telephony with Free On net Calls"),
-    TELE_L("Telephony with Unlimited Calls"),
-    MOB_PRE("Mobile Prepaid"),
-    MOB_POST("Mobile Post-paid"),
-    ERROR("SERVICE NOT POSSIBLE");
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
-    private String service;
+@Data
+@Builder
+public class Service {
 
-    Service(String service){
-        this.service = service;
-    }
+    @NotBlank
+    private final Integer serviceId;
 
-    public String getService(){
-        return service;
-    }
+    @NotNull
+    private final Services lobType;
 
-    public static Service convert(String value) {
-        try {
-            return Service.valueOf(value);
-        } catch(IllegalArgumentException iae){
-            return Service.valueOf("ERROR");
-        }
-    }
-
+    @NotNull
+    private final Date installationDate;
 }
-
