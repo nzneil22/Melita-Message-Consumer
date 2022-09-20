@@ -1,13 +1,11 @@
-package com.melitamessageconsumer;
+package com.melitamessageconsumer.amqp;
 
 import org.springframework.cloud.stream.annotation.Input;
-import org.springframework.cloud.stream.annotation.Output;
-import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 
 public interface AMQPBindings {
 
-    String LISTEN = "amqpMicroService";
+    String LISTEN = "crmQueue";
 
     @Input(LISTEN)
     SubscribableChannel amqpMicroServiceListen();

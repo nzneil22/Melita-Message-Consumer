@@ -1,6 +1,6 @@
 spring:
   application:
-    name: melita-consumer
+    name: melita-crm
   profiles:
     active: default
   config:
