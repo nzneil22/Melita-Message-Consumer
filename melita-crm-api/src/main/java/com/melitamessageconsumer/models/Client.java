@@ -1,6 +1,13 @@
 package com.melitamessageconsumer.models;
 
-import lombok.*;
+import com.melita_task.contract.ClientStatus;
+import com.melitamessageconsumer.models.FullName;
+import com.melitamessageconsumer.models.InstallationAddress;
+import com.melitamessageconsumer.models.Order;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -14,14 +21,14 @@ import java.util.UUID;
 @Entity
 @Builder
 @Table(name="clients")
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor
 @AllArgsConstructor
 public class Client {
 
     @Id
     @Type(type = "uuid-char")
     @Column(columnDefinition = "char(36)")
-    private UUID id;
+    private final UUID id = UUID.randomUUID();
 
     @Valid
     @NotNull
@@ -35,8 +42,6 @@ public class Client {
 
     private ClientStatus status = ClientStatus.ACTIVE;
 
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client", fetch = FetchType.LAZY)
     private List<Order> orders;
 

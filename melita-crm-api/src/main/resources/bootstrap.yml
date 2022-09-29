@@ -9,5 +9,3 @@ spring:
   cloud:
     bootstrap:
       enabled: true
-    config:
-      enabled: true
