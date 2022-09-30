@@ -1,9 +1,6 @@
 package com.melitamessageconsumer.models;
 
 import com.melita_task.contract.ClientStatus;
-import com.melitamessageconsumer.models.FullName;
-import com.melitamessageconsumer.models.InstallationAddress;
-import com.melitamessageconsumer.models.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
