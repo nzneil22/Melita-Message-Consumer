@@ -5,6 +5,14 @@ spring:
     username: guest
     password: guest
 
+  cache:
+    type: redis
+
+  redis:
+    host: localhost
+    port: 6379
+    password: guest
+
   jpa:
     hibernate:
       ddl-auto: validate
@@ -18,8 +26,14 @@ spring:
   cloud:
     stream:
       bindings:
-        crmQueue:
-          destination: customers
+        crmQueueCreate:
+          destination: createClients
+          group: crm
+        crmQueueUpdate:
+          destination: updateClients
+          group: crm
+        crmQueueSubmit:
+          destination: submitClients
           group: crm
       default:
         contentType: application/json
