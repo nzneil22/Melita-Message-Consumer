@@ -1,4 +1,4 @@
-# Melita-Message-Consumer Spring Boott Microservice (AMQP Message Consumer)
+# Melita-CRM Spring Boot Microservice (AMQP Message Consumer)
 
 Run RabbitMQ on Docker using command:
 * `docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3-management`
